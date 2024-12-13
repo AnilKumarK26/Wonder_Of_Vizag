@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanajangi - Mountain Trekking Destination</title>
+    <style>
+        /* Reusing styles from the main page */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #159895;
+            --accent-color: #57c5b6;
+            --bg-color: #f0f8ff;
+            --text-color: #2c3e50;
+            --white: #ffffff;
+            --light-gray: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav-bar a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        .destination-hero {
+            padding: 10rem 5% 5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .destination-hero h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .destination-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .destination-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .destination-images img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .destination-images img:hover {
+            transform: scale(1.05);
+        }
+
+        @media screen and (max-width: 768px) {
+            .destination-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="../index.html">VIZAG-City of Destiny</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="destination-hero">
+        <h1>Vanajangi - A Trekker's Paradise</h1>
+    </div>
+
+    <div class="destination-images">
+        <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-okg6r65n0251gmk5q9stkq7ln5-20231230230756.Medi.jpeg" alt="Vanajangi Landscape">
+        <img src="Vanajangi1.jpg" alt="Vanajangi Viewpoint">
+        <img src="Vanajangi2.jpg" alt="Vanajangi Ghat Road">
+    </div>
+
+    <div class="destination-content">
+        <h2>Discover the Wonders of Vanajangi</h2>
+        <p>Nestled in the Eastern Ghats, Vanajangi is a hidden gem that offers breathtaking mountain views and an exhilarating trekking experience. This picturesque destination is a paradise for nature lovers and adventure enthusiasts.</p>
+        
+        <h3>Trekking Highlights</h3>
+        <p>Vanajangi presents some of the most scenic trekking routes in the Vizag region. The trails wind through lush green landscapes, offering panoramic views of the surrounding mountains and valleys. Trekkers can expect moderate to challenging routes that test their endurance while rewarding them with stunning vistas.</p>
+        
+        <h3>Spectacular Viewpoints</h3>
+        <p>The mountain's viewpoints are truly breathtaking. As you ascend, you'll be treated to sweeping landscapes that stretch as far as the eye can see. The morning mists, rolling hills, and dense vegetation create a mesmerizing backdrop that makes every step of the trek worthwhile.</p>
+        
+        <h3>The Legendary Ghat Road</h3>
+        <p>The approach to Vanajangi is an adventure in itself. The winding ghat road offers a thrilling journey with hairpin bends and spectacular views at every turn. Each curve reveals a new perspective of the magnificent Eastern Ghats, making the journey as memorable as the destination.</p>
+        
+        <h3>Best Time to Visit</h3>
+        <p>The ideal time to visit Vanajangi is between October and March when the weather is cool and pleasant. During these months, the landscapes are at their most vibrant, with clear skies and comfortable temperatures perfect for trekking and exploration.</p>
+    </div>
+</body>
+</html>

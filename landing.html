@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizag-City of Destiny</title>
+    <style>
+        /* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Color Variables */
+    :root {
+        --primary-color: #1a5f7a;
+        --secondary-color: #159895;
+        --accent-color: #57c5b6;
+        --bg-color: #f0f8ff;
+        --text-color: #2c3e50;
+        --white: #ffffff;
+        --light-gray: #f4f4f4;
+    }
+
+    /* Reset and Base Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+
+    /* Navigation Bar */
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: var(--white);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .nav-bar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+            to right, 
+            var(--accent-color), 
+            var(--secondary-color), 
+            var(--primary-color)
+        );
+    }
+
+    .nav-bar p {
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+    }
+
+    .nav-bar a {
+        color: var(--white);
+        text-decoration: none;
+        position: relative;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        background: transparent;
+        border: 2px solid transparent;
+    }
+
+    .nav-bar a:hover {
+        background: rgba(255,255,255,0.2);
+        border-color: var(--white);
+        transform: translateY(-3px);
+    }
+
+    /* Explanation Section */
+    .explanation {
+        position: relative;
+        padding: 10rem 5% 5rem;
+        margin-top: 60px;
+        color: var(--white);
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+
+    .explanation .container {
+        position: relative;
+        z-index: 10;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .explanation h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        color: var(--white);
+    }
+
+    .explanation p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.8;
+        color: var(--light-gray);
+    }
+
+    /* Cards Section */
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 3rem 5%;
+    }
+
+    .card_container {
+        background-color: var(--white);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        transition: all 0.4s ease;
+        border: 2px solid transparent;
+        position: relative;
+    }
+
+    .card_container:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+    }
+
+    .card_container img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .card_container:hover img {
+        transform: scale(1.1);
+    }
+
+    .destination-card-content {
+        padding: 1.5rem;
+    }
+
+    .destination-card-content h2 {
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .destination-card-content p {
+        color: var(--text-color);
+        margin-bottom: 1rem;
+    }
+
+    .destination-card-content a {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: var(--white);
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .destination-card-content a:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-3px);
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 1024px) {
+        .cards {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .nav-bar {
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        .nav-bar a {
+            margin: 0.5rem 0;
+        }
+
+        .explanation {
+            padding: 6rem 5% 3rem;
+        }
+
+        .explanation h1 {
+            font-size: 2.2rem;
+        }
+
+        .explanation p {
+            font-size: 1rem;
+        }
+    }
+
+    /* Additional Utility Classes */
+    .text-center {
+        text-align: center;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    /* Scroll Bar Styling */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--light-gray);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--secondary-color);
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-color);
+    }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <p><a href="https://hashtagmagazine.in/wp-content/uploads/2022/04/120899049_1190205034706519_9156714525752117159_n-1024x1024.jpg" style:>VIZAG-City of Destiny</a></p>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="explanation">
+        <div class="container">
+            <h1>Discover the Magical Mountains of Vizag</h1>
+            <p>Embark on an unforgettable journey through the breathtaking landscapes of Vanajangi, Araku, and Deomali. Experience the raw beauty of nature, rich tribal culture, and mesmerizing mountain views.</p>
+        </div>
+    </div>
+    <section class="cards">
+        <div class="card_container">
+            <img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-okg6r65n0251gmk5q9stkq7ln5-20231230230756.Medi.jpeg" alt="Vanajangi">
+            <div class="destination-card-content">
+                <h2>Vanajangi</h2>
+                <p>A hidden gem with stunning mountain views and lush green landscapes.</p>
+                <a href="vanajangi.html">Explore Vanajangi</a>
+            </div>
+        </div>
+
+        <div class="card_container">
+            <img src="https://www.rural.tourism.gov.in/images/attraction/Madagada-Viewpoint-1.jpg" alt="Araku">
+            <div class="destination-card-content">
+                <h2>Araku Valley</h2>
+                <p>A picturesque valley known for its coffee plantations and tribal culture.</p>
+                <a href="araku.html">Explore Araku</a>
+            </div>
+        </div>
+         <div class="card_container">
+            <img src="https://th-i.thgim.com/public/life-and-style/travel/q7bz6j/article36095460.ece/alternates/LANDSCAPE_1200/25mpDeomali1" alt="Deomali">
+            <div class="destination-card-content">
+                <h2>Deomali</h2>
+                <p>Discover the highest mountain peak in Odisha-Andhra Pradesh Border with stunning views of the Eastern Ghats.</p>
+                <a href="deomali.html">Explore Deomali</a>
+            </div>
+         </div>
+    </section>
+</body>
+</html>
